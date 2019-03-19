@@ -40,6 +40,18 @@ FileIcon.propTypes = {
     file: PropTypes.object.isRequired
 };
 
+function FileName({file}) {
+    return (
+        <>
+            <FileIcon file={file}/>
+            <td className="file-name">{file.name}</td>
+        </>
+    );
+}
+FileName.propTypes = {
+    file: PropTypes.object.isRequired
+};
+
 // Fake Data 
 const testFiles = [
     {
