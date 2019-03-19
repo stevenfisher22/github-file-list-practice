@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 // Other Components
 import Time from './Time';
+import CommitMessage from './CommitMessage'
 
 // CSS
 import './index.css';
@@ -12,6 +13,7 @@ import './index.css';
 
 
 // Main Component
+// Props "files" is passed through ReactDOM
 const FileList = ({files}) => (
     <table className="file-list">
         <tbody>
@@ -66,17 +68,6 @@ function FileIcon({file}) {
 }
 FileIcon.propTypes = {
     file: PropTypes.object.isRequired
-};
-
-
-// Commit Message that sits in 'FileListItem' Row
-const CommitMessage = ({commit}) => (
-    <span>
-        {commit.message}
-    </span>
-);
-CommitMessage.propTypes = {
-    commit: PropTypes.object.isRequired
 };
 
 
