@@ -18,3 +18,13 @@
 .file-icon .fa-folder {
   color: #508FCA;
 }
+.commit-message {
+  max-width: 442px;
+  padding-left: 25px;
+  overflow: hidden;
+}
+.age {
+  width: 125px;
+  text-align: right;
+  padding-right: 10px;
+}
