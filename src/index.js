@@ -17,26 +17,11 @@ FileList.propTypes = {
 };
 
 const FileListItem = ({file}) => (
-    <tr className="file-list-item" key="{file.id}">
-        <td className="file-name">{file.name}</td>
+    <tr className="file-list-item">
+        <FileName file={file}/>
     </tr>
 );
 FileListItem.propTypes = {
-    file: PropTypes.object.isRequired
-};
-
-function FileIcon({file}) {
-    let icon = 'fa-file-text-o';
-    if(file.type === 'folder') {
-        icon = 'fa-folder'
-    }
-    return (
-        <td className="file-icon">
-            <i className={`fa ${icon}`}/>
-        </td>
-    );
-}
-FileIcon.propTypes = {
     file: PropTypes.object.isRequired
 };
 
@@ -49,6 +34,21 @@ function FileName({file}) {
     );
 }
 FileName.propTypes = {
+    file: PropTypes.object.isRequired
+};
+
+function FileIcon({file}) {
+    let icon = 'fa-file-alt';
+    if(file.type === 'folder') {
+        icon = 'fa-folder'
+    }
+    return (
+        <td className="file-icon">
+            <i className={`fa ${icon}`}/>
+        </td>
+    );
+}
+FileIcon.propTypes = {
     file: PropTypes.object.isRequired
 };
 
