@@ -28,11 +28,10 @@ FileList.propTypes = {
 // Row that sits in Main 'FileList' Component
 const FileListItem = ({file}) => (
     <tr className="file-list-item">
-        <FileName file={file}/>
-        <CommitMessage commit={file.latestCommit}/>
-        <td className="age">
-            <Time time={file.updated_at}/>
-        </td>
+        <td className="file-icon"><FileIcon file={file}/></td>
+        <td className="file-name"><FileName file={file}/></td>
+        <td className="commit-message"><CommitMessage commit={file.latestCommit}/></td>
+        <td className="age"><Time time={file.updated_at}/></td>
     </tr>
 );
 FileListItem.propTypes = {
@@ -43,10 +42,9 @@ FileListItem.propTypes = {
 // File Name that sits in 'FileListItem' Row
 function FileName({file}) {
     return (
-        <>
-            <FileIcon file={file}/>
-            <td className="file-name">{file.name}</td>
-        </>
+        <div>
+            {file.name}
+        </div>
     );
 }
 FileName.propTypes = {
@@ -61,9 +59,9 @@ function FileIcon({file}) {
         icon = 'fa-folder'
     }
     return (
-        <td className="file-icon">
+        <>
             <i className={`fa ${icon}`}/>
-        </td>
+        </>
     );
 }
 FileIcon.propTypes = {
@@ -73,9 +71,9 @@ FileIcon.propTypes = {
 
 // Commit Message that sits in 'FileListItem' Row
 const CommitMessage = ({commit}) => (
-    <td className="commit-message">
+    <span>
         {commit.message}
-    </td>
+    </span>
 );
 CommitMessage.propTypes = {
     commit: PropTypes.object.isRequired
