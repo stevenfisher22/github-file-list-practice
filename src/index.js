@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
 // Other Components
-import Time from './Time';
-import CommitMessage from './CommitMessage'
+import Time from './components/Time';
+import CommitMessage from './components/CommitMessage'
 import FileName from './components/FileName'
 
 // CSS
