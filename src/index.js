@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 // Other Components
 import Time from './Time';
 import CommitMessage from './CommitMessage'
+import FileName from './components/FileName'
 
 // CSS
 import './index.css';
@@ -41,20 +42,7 @@ FileListItem.propTypes = {
 };
 
 
-// File Name that sits in 'FileListItem' Row
-function FileName({file}) {
-    return (
-        <div>
-            {file.name}
-        </div>
-    );
-}
-FileName.propTypes = {
-    file: PropTypes.object.isRequired
-};
-
-
-// Icon that is nested in 'FileName' Component
+// File Icon
 function FileIcon({file}) {
     let icon = 'fa-file-alt';
     if(file.type === 'folder') {
